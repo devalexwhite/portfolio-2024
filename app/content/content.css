@@ -1,0 +1,6 @@
+.frame-image {
+  @apply text-sm w-fit text-center text-slate-700 font-light mb-8;
+}
+.frame-image img {
+  @apply max-h-[400px] rounded-xl overflow-hidden shadow mb-4;
+}
