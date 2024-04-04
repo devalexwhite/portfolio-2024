@@ -10,7 +10,7 @@ const PROJECTS: Array<Project> = [
     name: "AeroFlow Dynamics Shopify Website",
     summary:
       "Working closely with my client, I designed and developed a beautiful, modern website for this car parts store.",
-    image: "/projects/aeroflow-dynamics.jpeg",
+    image: "/projects/aeroflow-dynamics.webp",
     link: "/content/projects/aeroflow-dynamics",
     date: "2024",
     tech: ["CSS", "JavaScript", "Shopify"],
@@ -19,7 +19,7 @@ const PROJECTS: Array<Project> = [
     name: "mdJournal",
     summary:
       "Blogging as simple as drag-and-drop! Designed and developed with the goal of making a frictionless blogging experience.",
-    image: "/projects/mdjournal.jpeg",
+    image: "/projects/mdjournal.webp",
     link: "/content/projects/mdjournal",
     date: "2024",
     tech: ["Supabase", "NextJS", "SQL"],
@@ -28,7 +28,7 @@ const PROJECTS: Array<Project> = [
     name: "RevLocal Marketing Platform",
     summary:
       "An all in one spot for clients to gain in-depth, meaningful insights into their digital marketing services.",
-    image: "/projects/marketing-platform.jpeg",
+    image: "/projects/marketing-platform.webp",
     link: "/content/projects/marketing-platform",
     date: "2023",
     tech: ["Figma", "User Research"],

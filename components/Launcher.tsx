@@ -20,23 +20,24 @@ const APP_LIST: Array<AppIcon> = [
     icon: <User color="white" />,
     path: "/content/about",
   },
-  {
-    appName: "Projects",
-    gradient: ["#38405F", "#59546C "],
-    icon: <Code color="white" />,
-    path: "/content/projects",
-  },
-  {
-    appName: "Blog",
-    gradient: ["#FFCAD4", "#B0D0D3"],
-    icon: <Post color="black" />,
-    path: "/content/about",
-  },
+  // {
+  //   appName: "Projects",
+  //   gradient: ["#38405F", "#59546C "],
+  //   icon: <Code color="white" />,
+  //   path: "/content/projects",
+  // },
+  // {
+  //   appName: "Blog",
+  //   gradient: ["#FFCAD4", "#B0D0D3"],
+  //   icon: <Post color="black" />,
+  //   path: "/content/about",
+  // },
   {
     appName: "Resume",
     gradient: ["#122C34", "#224870"],
     icon: <DownloadCircle color="white" />,
-    path: "/content/about",
+    path: "/Alex_White_Resume.docx",
+    external: true
   },
   {
     appName: "Contact",
