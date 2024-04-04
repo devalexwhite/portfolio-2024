@@ -35,7 +35,7 @@ const PROJECTS: Array<Project> = [
   },
 ];
 
-const Project = ({ name, summary, date, image, link, tech }: Project) => {
+const ProjectComponent = ({ name, summary, date, image, link, tech }: Project) => {
   return (
     <motion.li
       variants={{
@@ -104,7 +104,7 @@ export default function ProjectList() {
       className="overflow-hidden shadow-inner w-full bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-lg not-prose divide-y"
     >
       {PROJECTS.map((project) => (
-        <Project key={project.name} {...project} />
+        <ProjectComponent key={project.name} {...project} />
       ))}
     </motion.ul>
   );

@@ -66,7 +66,7 @@ interface AppIconComponent extends AppIcon {
   onLaunch: () => {};
 }
 
-const AppIcon = ({ appName, gradient, icon, onLaunch }: AppIconComponent) => {
+const AppIconComponent = ({ appName, gradient, icon, onLaunch }: AppIconComponent) => {
   const gradientStyle = tinygradient(gradient);
 
   return (
@@ -134,7 +134,7 @@ export default function Launcher() {
         className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 md:gap-x-20 gap-16 md:gap-y-32 z-20 relative"
       >
         {APP_LIST.map((app) => (
-          <AppIcon
+          <AppIconComponent
             onLaunch={() => handleLaunchApp(app.path, app.external)}
             {...app}
             key={app.appName}
