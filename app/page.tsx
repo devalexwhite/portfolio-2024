@@ -227,7 +227,7 @@ export default function HomePage() {
               </div>
               <div className="mt-8 md:mt-0">
                 <div className="mb-8 w-full py-2 px-6 border-4 border-[#4b4642] text-[#4b4642] uppercase tracking-tighter leading-tight">
-                  <div className="text-xl md:text-3xl font-black">Personal Portoflio Website</div>
+                  <div className="text-xl md:text-3xl font-black">Personal Portfolio Website</div>
                   <div className="flex text-xs md:text-base font-medium justify-between w-full">
                     <div className="flex-1">First class</div>
                     <div className="flex-1 text-center">Permit No. N/A</div>
