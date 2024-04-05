@@ -6,7 +6,7 @@ import AnimatedMountains from "@/components/AnimatedMountains";
 import AnimatedProfileImage from "@/components/AnimatedProfileImage";
 import FadeInRotate from "@/components/FadeInRotate";
 import AnimatedGrid from "@/components/AnimatedGrid";
-import TVContainer, { TVSize } from "@/components/TVContainer";
+import TVContainer from "@/components/TVContainer";
 import Link from "next/link";
 
 export default function HomePage() {
