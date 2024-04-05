@@ -47,7 +47,7 @@ export default function HomePage() {
           </span>
         </h2>
       </header>
-      <section className="max-w-3xl w-full px-4 my-16">
+      <section className="max-w-3xl w-full px-4 my-16 mx-auto">
         <p className="text-white  text-left font-light text-lg">
           I'm your go-to code wrangler when killer products are the mission.
           Design chops? Check. Code fu? Yep. I'll turbocharge your idea from
