@@ -1,0 +1,200 @@
+---
+title: Posted from Haiku OS
+author: Alex White
+location: Hilliard, Ohio
+date: July 18, 2023
+summary: In 1990 there was an operating system called BeOS developed by Be Inc. BeOS was meant to be a "multimedia" focused alternative to Mac OS and Windows. Unfortunately BeOS failed to gain traction, and Be Inc was acquired by Palm, Inc in 2001. Despite that, BeOS lives on today thanks to the wonderful work of the Haiku project.
+---
+
+In 1990 there was an operating system called BeOS developed by Be Inc. BeOS was meant to be a "multimedia" focused alternative to Mac OS and Windows. Unfortunately BeOS failed to gain traction, and [Be Inc was acquired by Palm, Inc in 2001](https://web.archive.org/web/20230911212252/https://www.computerworld.com/article/2794101/palm-completes-buyout-of-be-inc-.html). Despite that, BeOS lives on today thanks to the wonderful work of the Haiku project.
+
+## Writing a Haiku
+
+Development of Haiku OS began in 2001, with the first alpha being released in 2009. Haiku OS is maintained by a community of volunteers, as well as by Haiku Inc., a non-profit based out of Rochester, New York and founded by Michael Phipps.
+
+The Haiku project states that the operating system focuses on a simple, efficient model of personal computing, coupled with great performance and a rich API that makes life easier for developers.
+
+The last part especially spoke to me, and I had to put it to the test! But first, let's dig into Haiku.
+
+## Impressions of Haiku
+
+### Installation
+
+I installed Haiku on a virtual machine running on my Linux Mint host. The [ISO from the Haiku website](https://web.archive.org/web/20230911212252/https://www.haiku-os.org/get-haiku/r1beta4/) includes an installer, along with a live desktop environment. I went straight for the install.
+
+The installation was fast (like blazingly fast, the files copied in seconds), and the graphical installer was easy enough to use (although some manual partitioning was required). After installation, the system rebooted into the Haiku desktop environment, again almost instantly. No onboarding appeared, just a clean desktop with a "Haiku" wallpaper and the "Deskbar".
+
+### Desktop Environment
+
+Haiku is different, and that's a good thing. First off, you'll probably want to click the "Quick Tour" button on your desktop to learn how to navigate the system. Most of it is intuitive, but there's some power-user features that are great. For example, windows in Haiku are decorated with a yellow tab at the top. This tab has two icons, one that closes the window, and one that maximizes it. A really unique feature though is that holding the "Super" key while dragging a window onto the title of another window "stacks" the two windows, creating a tabbed interface. I love this feature, it feels like a more polished version of the window tiler in System76's PopOS Linux distro.
+
+Another unique feature is the ability to "tile" windows by holding the "super" key while dragging a window near the edges of another window. Tiled windows are linked, moving one moves the other. Likewise, resizing one window causes the other to move over. It's a really interesting feature, although I'm not quite sure I see a use case yet. If you could maximize the tiled windows, thus creating a split screen tile, this would be very useful. Unfortunately though, maximizing one window will push the tiled window off the screen.
+
+![Screenshot of the Haiku desktop](/posts/posted-from-haiku-os/haiku-screenshot.png)
+
+### Performance
+
+I've mentioned this a few times, but Haiku is fast, very fast. I gave my virtual machine a single gigabye of RAM, yet Haiku boots in a second or two and applications launch instantly.
+
+There are two major contributors to this. First, the Be File System (BFS) is a ["database-like file system with support for indexed metadata"](https://web.archive.org/web/20230911212252/https://www.haiku-os.org/docs/HIG/index.xml). What this means is that metadata attributes on files (ie filetype, created date, created by username) are indexes, which allows for extremely performant lookups, just like in an SQL environment. Finding a specific file becomes a very quick operation as the OS doesn't have to search through every file in a directory, instead it can perform a query on the indexes.
+
+The second contributing factor is detailed in the Human Interaction Guidelines document for Haiku: "Probably the best-known quality about BeOS and Haiku operating systems is speed. This largely comes from the extensive use of multithreading in applications.".
+
+The document goes on the describe how in operating systems such as Windows and Linux it is common to see a window "blank out" due to it being controlled by a single thread that is occupied with another task. Whereas in Haiku, you would spawn another thread for the time consuming tasks, and allow the application thread to run in parallel, thus preventing the application window from locking up.
+
+From my understanding, BeOS's multithreading ability is what led Palm Inc. to [purchase Be Inc. in 2001](https://web.archive.org/web/20230911212252/https://lowendmac.com/2016/a-history-of-palm-part-5-the-end-and-the-post-mortem/). Palm hoped to use BeOS and it's multithreading capability as the base for Palm OS 6 (which never saw the light of day).
+
+### Deskbar
+
+The "Deskbar" is Haiku's launcher and application panel. The deskbar also includes widgets (such as a performance graph) and is very customizable. You can move the deskbar to any side of the screen, rearrange items, and change the size.
+
+In Haiku, double clicking an application's titlebar collapses the app into the deskbar (rather than maximizing it like other operating systems). When you click an application's name in the deskbar, you get a list of all available windows to quickly change between them.
+
+### Replicants
+
+This is a really, really interesting feature. You might recall how KDE, Windows Vista, and now Mac OS have desktop widgets. These widgets included things like your weather or system performance graphs that stay on your desktop and show you live information.
+
+Well Haiku has those too, but you pull the widgets out of other applications. Let me try to explain. You open the Weather application to see the forecast. In the bottom right, you notice a little drag icon. Dragging this icon to your desktop creates a widget that replicates the forecast you were viewing in the application. This weather "replicant" now lives on your desktop, even after you closed the Weather application. Pretty neat, huh?
+
+![Screenshot replicants in Haiku](/posts/posted-from-haiku-os/haiku-screenshot-2.png)
+
+### Software
+
+Haiku's software center is named "HaikuDepot", and it's surprisingly good. Like better than some previous versions of Gnome's software center (and infinitely better than the current one found in Windows). There's a "Featured Packages" tab with large icons and a list of high-quality software. Nearly each entry has a description, screenshots, changelog and even ratings!
+
+![Screenshot of Haiku's Software Depot](/posts/posted-from-haiku-os/haiku-screenshot-3.png)
+
+The next tab is "All Packages", and this list includes the packages from the "HaikuPorts" repository. As the name suggests, these are ports of popular *nix applications to Haiku. You can get most of what you need, including GIMP, Gnome Web, Calibre, and more.
+
+The ports are great, but the Haiku first applications are what really excite me. Applications like Beam (email), BePoddler (Podcasts) and CoolReader (eBooks) show the vibrancy of the development community for this small, enthusiast operating system.
+
+### Design Language
+
+Haiku has a very consistent, old school look to it, but there's a definite beauty to it's appearance. Applications follow a consistent look and feel, thanks to the native controls provided by the Haiku SDK.
+
+The layout of applications typically follows a hierarchy as follows:
+
+1. Titlebar
+2. Menubar
+3. Toolbar (if needed)
+4. Main Content
+
+Menubar entries are often annotated with keybinding shortcuts.
+
+![Screenshot of a menubar in Haiku](/posts/posted-from-haiku-os/haiku-screenshot-4.png)
+
+![Screenshot of a menu item in Haiku](/posts/posted-from-haiku-os/haiku-screenshot-5.png)
+
+Haiku outlines a set of [guidelines for creating application icons](https://web.archive.org/web/20230911212252/https://www.haiku-os.org/development/icon-guidelines), preferring a 3D skeuomorphic design, which looks great in my opinion. Haiku even includes a icon design program out of the box called "Icon-o-Matic", making it easier to create application icons.
+
+![Screenshot of the Icon-O-Matic application](/posts/posted-from-haiku-os/icon-o-matic-screenshot.png)
+
+The Haiku desktop environment follows a common pattern most users are familiar with, but adds on more advanced features (such as tiling, stacking and replicants). It's a good balance of familiar and simple with more advanced features available to those who benefit from them.
+
+Here's an excerpt from the [Haiku Human Interface Guidelines](https://web.archive.org/web/20230911212252/https://www.haiku-os.org/docs/HIG/index.xml) that I really liked:
+
+> "Most people will use your software to get work done, unless, of course, you're writing the next hit game, and despite experiences you may have had which might make you wonder, users are fairly intelligent. The saying that no one reads manuals is mostly true: people generally have better things to do than read software manuals except when either in trouble or as bathroom reading. Try to keep in mind how busy most people are and how valuable their time is to them when you are designing your program."
+
+It's too often that we are told to assume users are clueless, and to design for that. But in reality, maybe it's the software that has become unusable, the UX patterns unmanageable. We would do well to focus on the value of people's time, while also respecting human intelligence.
+
+The guidelines go on to explain how one should categorize the features of an application into three buckets, "common", "uncommon", and "rare". Features in the common bucket are those that the user does all the time, whereas those in the rare bucket are tasks might be done by less than 20% percent of your users.
+
+The guidelines state that "if you do decide to include features to handle Rare tasks, think carefully about each task's importance in the grand scheme of things before deciding with any finality." The section ends by saying "Design your application to meet the needs of 80 percent of your target audience. Features add complexity and complexity adds difficulty.".
+
+### Other Notes
+
+A few other things that stood out, but that don't need an entire section:
+
+- Bash is the default shell used in the terminal
+- PoorMan is a one button HTTP web server, it even generates a "public_html" folder for you in your home directory!
+- Haiku has "workspaces" like Gnome and KDE
+- Holding CTRL+ALT let's you either move a window by left-clicking anywhere on it, or resize by dragging the edge of the window closest to your mouse
+
+## Developing on Haiku
+
+If you've read some of my recent posts, you'll know that I recently release a Palm OS weight tracking app (link below to read that article). Continuing my trend of developing on lesser-known operating systems, I decided Haiku would be a great next challenge! This decision was reinforced when I learned Palm, Inc. acquired Be Inc. (a fact I didn't realize until I wrote this article)!
+
+Admittedly I'm still learning the ins and outs of Haiku's SDK, but my first impressions are extremely positive. When you first boot the system, among other things, there's an icon on your desktop called "BeBook". This is a link to the Haiku SDK documentation, and I absolutely love that they placed it right on the desktop by default. Additionally, Haiku includes all the libraries and gcc out of the box, so you can start developing right away.
+
+I installed an IDE called "Paladin" from HaikuDepot. Paladin let's you scaffold starter projects, manages the files in your project, and builds/runs/debugs your application. It uses "Pe", Haiku's built-in code editor, for opening files.
+
+![Screenshot of the IDE environment in Haiku](/posts/posted-from-haiku-os/haiku-screenshot-6.png)
+
+Through a combination of Paladin's starter projects, the BeBook, and some excellent tutorials found on the Haiku website, I've been able to start developing GUIs in Haiku. I don't have anything to show quite yet, so keep an eye out for an app release post in the near future! That said, I can already tell the SDK is very well constructed, and I was able to make sense of it within a few minutes of tinkering. That's in stark contrast to say GTKs Rust SDK that still has me scratching my head.
+
+### Object Oriented
+
+The Haiku SDK is object oriented, with each class being described in detail within BeBook. For example, below is a snippet of code for adding a button and a label to a window:
+
+```cpp
+#include "MainWindow.h"
+#include "Application.h"
+
+#include "Button.h"
+#include "StringView.h"
+
+enum
+{
+  BUTTON_CLICK = 1
+}
+
+MainWindow::MainWindow(void)
+  : BWindow(BRect(100,100,500,400), "Main Window", B_TITLED_WINDOW, B_ASYNCHRONUS_CONTROLS)
+{
+  BRect frame(10,10,11,11);
+  BStringView *fLabel = new BStringView(frame, "label1", "Hello, World!");
+  fLabel->ResizeToPreferred();
+
+  frame.set(10,30,11,11);
+  BButton *fButton = new BButton(frame, "button1", "Click me!", new BMessage(BUTTON_CLICK));
+
+  this->AddChild(fLabel);
+  this->AddChild(fButton);
+}
+```
+
+With those couple lines of code, we instantiate a new label (BStringView) and button (BButton). We set their text and positions (reusing the same frame rectangle for both of them), then add them to the window.
+
+### Mixed Signals
+
+You might have noticed the "BMessage" in the above code. This is called a "signal" and is how you receive UI events in Haiku. The above example creates a new signal using the integer value defined by the "BUTTON_CLICK" enum property. When the button is clicked, that signal is emitted. Here's how one would consume the signal:
+
+```cpp
+void MainWindow::MessageReceived(BMessage *msg)
+{
+  switch (msg->what)
+  {
+    case BUTTON_CLICK:
+    {
+      fLabel->SetText("Got it!"); // Assuming we moved fLabel to a global scope in our header file
+    }
+    default:
+    {
+      BWindow::MessageReceived(msg);
+      break;
+    }
+  }
+}
+```
+
+This pattern is even used when the MainWindow wants to tell the application it should quit.
+
+```cpp
+bool MainWindow::QuitRequested(void)
+{
+  be_app->PostMessage(B_QUIT_REQUESTED);
+  return true;
+}
+```
+
+Pretty cool stuff, and very easy to understand in my opinion!
+
+I plan to continue digging into the SDK, and will post a more in-depth analysis once I have some more experience under my belt!
+
+[Haiku development tutorials](https://web.archive.org/web/20230911212252/https://www.haiku-os.org/development/)
+
+## Conclusion
+
+Haiku is a very neat little operating system, with a long history. I absolutely adore that this project exists, and it's obvious there's a loving community supporting it. Things like window stacking and the deskbar make Haiku unique.
+
+Whereas things like the well constructed SDK and native IDEs make Haiku exciting. I can't wait to see what this project evolves into, and I'm looking forward to contributing an application or two to Haiku!

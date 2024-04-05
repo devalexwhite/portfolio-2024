@@ -1,4 +1,7 @@
 import Image from "next/image";
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
 import MacImage from "@/public/mac-xl.svg";
 import FloppyImage from "@/public/floppy.svg";
@@ -8,11 +11,26 @@ import FadeInRotate from "@/components/FadeInRotate";
 import AnimatedGrid from "@/components/AnimatedGrid";
 import TVContainer from "@/components/TVContainer";
 import Link from "next/link";
+import ArticeLink from "@/components/ArticleLink";
+import { ArticleFrontmatter } from "./articles/[slug]/page";
 
 export default function HomePage() {
+  const blogFiles = fs.readdirSync(path.join('posts'))
+  const articles = blogFiles.map(filename => {
+    const content = fs.readFileSync(path.join('posts', filename), 'utf-8')
+
+    const parsed = matter(content)
+    const frontMatter: ArticleFrontmatter = parsed.data as ArticleFrontmatter
+
+    return {
+      meta: frontMatter,
+      slug: `/articles/${filename.replace('.mdx', '')}`
+    }
+  })
+
   return (
-    <main className="bg-slate-900 min-w-screen min-h-screen px-4 md:px-8 py-16">
-      <header className="max-w-3xl mx-auto w-full">
+    <main className="bg-slate-900 min-w-screen min-h-screen  py-16">
+      <header className="max-w-3xl mx-auto w-full px-6 ">
         <h1 className="uppercase text-5xl md:text-6xl font-sans font-black text-yellow-400  mb-8">
           Turn ideas <br />
           into <br />
@@ -47,7 +65,7 @@ export default function HomePage() {
           </span>
         </h2>
       </header>
-      <section className="max-w-3xl w-full px-4 my-16 mx-auto">
+      <section className="max-w-3xl w-full px-6 my-16 mx-auto">
         <p className="text-white  text-left font-light text-lg">
           I'm your go-to code wrangler when killer products are the mission.
           Design chops? Check. Code fu? Yep. I'll turbocharge your idea from
@@ -110,6 +128,18 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
+        </div>
+      </section>
+      <section className="bg-[#fdfef0] w-full  p-16 text-[#0c1313]">
+        <header className="w-full pb-8 mb-8 border-b border-[#a6a49a]">
+          <h2 className="font-black text-4xl">Articles on Modern Computing</h2>
+        </header>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {
+            articles.map(article =>
+              <ArticeLink title={article.meta.title} summary={article.meta.summary} href={article.slug} />
+            )
+          }
         </div>
       </section>
     </main>
