@@ -13,6 +13,7 @@
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.1.4",
     "@types/mdx": "^2.0.12",
+    "@vercel/analytics": "^1.2.2",
     "framer-motion": "^11.0.23",
     "gray-matter": "^4.0.3",
     "iconoir-react": "^7.5.0",
