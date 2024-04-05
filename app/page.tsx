@@ -22,18 +22,18 @@ export default function HomePage() {
           <div className="bg-slate-900 absolute top-0 left-0 right-0 flex items-center justify-center z-20">
             <AnimatedMountains />
           </div>
-          <div className="hidden md:block z-0 absolute -right-44 top-1/3 w-32">
+          <div className="hidden lg:block z-0 absolute -right-44 top-1/3 w-32">
             <FadeInRotate left={false}>
               <Image alt="Mac vector" src={MacImage} />
             </FadeInRotate>
           </div>
-          <div className="hidden md:block z-0 absolute -left-44 -rotate-12 top-1/3 w-32">
+          <div className="hidden lg:block z-0 absolute -left-44 -rotate-12 top-1/3 w-32">
             <FadeInRotate left>
               <Image alt="Floppy vector" src={FloppyImage} />
             </FadeInRotate>
           </div>
           <AnimatedProfileImage />
-          <div className="z-10 absolute bottom-0 left-0 right-0 h-3/4 overflow-hidden">
+          <div className="z-10 absolute bottom-0 left-0 right-0 h-3/4 overflow-hidden flex items-end">
             <AnimatedGrid />
           </div>
         </div>
@@ -57,18 +57,18 @@ export default function HomePage() {
           <h3 className="text-white font-black text-4xl italic mb-4">
             Reach out today...
           </h3>
-          <div className="grid grid-cols-2 md:flex md:flex-row items-center gap-4 sm:gap-8">
+          <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-4 sm:gap-8">
             <Link
               href="mailto:alex.white@hey.com"
-              className="group inline-block"
+              className="group inline-block w-full h-full"
             >
-              <div className="group-hover:-translate-y-2 transition-all">
-                <TVContainer size={TVSize.md}>
+              <div className="group-hover:-translate-y-2 transition-all w-full h-48 sm:w-48 sm:h-48">
+                <TVContainer>
                   <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center">
-                    <div className="font-serif font-black text-3xl text-slate-200 pb-2">
+                    <div className="font-serif font-black text-2xl sm:text-3xl text-slate-200 pb-2">
                       @
                     </div>
-                    <p className="text-lg text-yellow-600 font-bold">
+                    <p className="text-sm sm:text-lg text-yellow-600 font-bold">
                       Send an Electronic Mail!
                     </p>
                   </div>
@@ -77,29 +77,32 @@ export default function HomePage() {
             </Link>
             <Link
               href="https://www.linkedin.com/in/devalexwhite/"
-              className="group inline-block"
+              className="group inline-block w-full h-full"
             >
-              <div className="group-hover:-translate-y-2 transition-all">
-                <TVContainer size={TVSize.md}>
+              <div className="group-hover:-translate-y-2 transition-all w-full h-48 sm:w-48 sm:h-48">
+                <TVContainer>
                   <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center">
-                    <div className="font-serif font-black text-3xl text-slate-200 pb-2">
+                    <div className="font-serif font-black text-2xl sm:text-3xl text-slate-200 pb-2">
                       in
                     </div>
-                    <p className="text-lg text-yellow-600 font-bold">
+                    <p className="text-sm sm:text-lg text-yellow-600 font-bold">
                       Find me on LinkedIn
                     </p>
                   </div>
                 </TVContainer>
               </div>
             </Link>
-            <Link href="/Alex_White_Resume.docx" className="group inline-block">
-              <div className="group-hover:-translate-y-2 transition-all">
-                <TVContainer size={TVSize.md}>
+            <Link
+              href="/Alex_White_Resume.docx"
+              className="group inline-block w-full h-full"
+            >
+              <div className="group-hover:-translate-y-2 transition-all w-full h-48 sm:w-48 sm:h-48">
+                <TVContainer>
                   <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center">
-                    <div className="font-serif font-black text-3xl text-slate-200 pb-2">
+                    <div className="font-serif font-black text-2xl sm:text-3xl text-slate-200 pb-2">
                       docx
                     </div>
-                    <p className="text-lg text-yellow-600 font-bold">
+                    <p className="text-sm sm:text-lg text-yellow-600 font-bold">
                       Download my Resume
                     </p>
                   </div>

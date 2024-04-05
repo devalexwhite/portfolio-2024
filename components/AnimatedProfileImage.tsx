@@ -20,7 +20,7 @@ export default function AnimatedProfileImage() {
           delay: 0.5,
           duration: 0.8,
         }}
-        className="w-52 h-52 rounded-full overflow-hidden bg-yellow-400 z-30"
+        className="w-32 h-32 sm:w-52 sm:h-52 rounded-full overflow-hidden bg-yellow-400 z-30"
       >
         <Image
           alt="Image of Alex White"
