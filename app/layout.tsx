@@ -7,6 +7,7 @@ const roboto = Roboto({ weight: ["400", "700", "900"], subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Alex White | Design Minded UX Engineer",
   description: "Entrepreneur, developer, designer in Hilliard, Ohio.",
+  metadataBase: new URL("https://alexwhite.fyi"),
 };
 
 export default function RootLayout({
