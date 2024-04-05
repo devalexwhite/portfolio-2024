@@ -111,14 +111,14 @@ export default function HomePage() {
               </div>
             </Link>
             <Link
-              href="/Alex_White_Resume.docx"
+              href="/Alex White - UX Engineer - Resume.pdf"
               className="group inline-block w-full h-full"
             >
               <div className="group-hover:-translate-y-2 transition-all w-full h-48 sm:w-48 sm:h-48">
                 <TVContainer>
                   <div className="w-full h-full p-4 flex flex-col items-center justify-center text-center">
                     <div className="font-serif font-black text-2xl sm:text-3xl text-slate-200 pb-2">
-                      docx
+                      pdf
                     </div>
                     <p className="text-sm sm:text-lg text-yellow-600 font-bold">
                       Download my Resume
@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
       <section className="bg-[#fdfef0] w-full  p-16 text-[#0c1313]">
         <header className="w-full pb-8 mb-8 border-b border-[#a6a49a]">
-          <h2 className="font-black text-4xl">Articles on Modern Computing</h2>
+          <h2 className="font-black text-4xl">Articles on Computing</h2>
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {
@@ -141,6 +141,9 @@ export default function HomePage() {
             )
           }
         </div>
+      </section>
+      <section className="max-w-3xl mx-auto w-full px-6 my-16">
+        Hi
       </section>
     </main>
   );
