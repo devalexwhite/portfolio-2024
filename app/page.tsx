@@ -54,10 +54,10 @@ export default function HomePage() {
           pixel to profit – product team captain right here.
         </p>
         <div className="mt-8">
-          <h3 className="text-white font-black text-4xl italic mb-4">
+          <h3 className="text-white font-black text-4xl italic mb-8 sm:mb-4">
             Reach out today...
           </h3>
-          <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-4 sm:gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-8">
             <Link
               href="mailto:alex.white@hey.com"
               className="group inline-block w-full h-full"
