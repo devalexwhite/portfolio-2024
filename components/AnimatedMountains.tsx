@@ -19,10 +19,10 @@ export default function AnimatedMountains() {
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="2"
+        strokeWidth="2"
         fill="none"
-        fill-rule="evenodd"
-        stroke-linecap="square"
+        fillRule="evenodd"
+        strokeLinecap="square"
       >
         <g id="Large" transform="translate(0, -16.7929)" stroke="#979797">
           <g id="Group-2" transform="translate(-0.5, 17)" ref={scope}>

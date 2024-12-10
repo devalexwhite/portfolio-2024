@@ -1,7 +1,7 @@
 import Image from "next/image";
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 import MacImage from "@/public/mac-xl.svg";
 import FloppyImage from "@/public/floppy.svg";
@@ -15,23 +15,25 @@ import ArticeLink from "@/components/ArticleLink";
 import { ArticleFrontmatter } from "./articles/[slug]/page";
 
 export default function HomePage() {
-  const blogFiles = fs.readdirSync(path.join('posts'))
-  const articles = blogFiles.map(filename => {
-    const content = fs.readFileSync(path.join('posts', filename), 'utf-8')
+  const blogFiles = fs.readdirSync(path.join("posts"));
+  const articles = blogFiles
+    .map((filename) => {
+      const content = fs.readFileSync(path.join("posts", filename), "utf-8");
 
-    const parsed = matter(content)
-    const frontMatter: ArticleFrontmatter = parsed.data as ArticleFrontmatter
+      const parsed = matter(content);
+      const frontMatter: ArticleFrontmatter = parsed.data as ArticleFrontmatter;
 
-    return {
-      meta: frontMatter,
-      slug: `/articles/${filename.replace('.mdx', '')}`
-    }
-  }).sort((a, b) => {
-    const dateA = new Date(a.meta.date)
-    const dateB = new Date(b.meta.date)
+      return {
+        meta: frontMatter,
+        slug: `/articles/${filename.replace(".mdx", "")}`,
+      };
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.meta.date);
+      const dateB = new Date(b.meta.date);
 
-    return dateB.getTime() - dateA.getTime()
-  })
+      return dateB.getTime() - dateA.getTime();
+    });
 
   return (
     <main className="bg-slate-900 min-w-screen min-h-screen  pt-16">
@@ -140,72 +142,128 @@ export default function HomePage() {
           <h2 className="font-black text-5xl">Articles on Computing</h2>
         </header>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {
-            articles.map(article =>
-              <ArticeLink title={article.meta.title} summary={article.meta.summary} href={article.slug} />
-            )
-          }
+          {articles.map((article) => (
+            <ArticeLink
+              title={article.meta.title}
+              summary={article.meta.summary}
+              href={article.slug}
+            />
+          ))}
         </div>
       </section>
       <section className="w-full px-6 my-16 relative">
         <header className="w-full pb-8 mb-16 text-white">
-          <h2 className="font-black text-5xl">Projects That Are <strong className="italic text-yellow-400">Out of This World</strong></h2>
+          <h2 className="font-black text-5xl">
+            Projects That Are{" "}
+            <strong className="italic text-yellow-400">
+              Out of This World
+            </strong>
+          </h2>
         </header>
         <div className="flex flex-wrap justify-center gap-32 z-20">
-          <Link href="https://github.com/devalexwhite/SvOS" target="_blank" className="box hover:shadow-xl transition-all block">
+          <Link
+            href="https://github.com/devalexwhite/SvOS"
+            target="_blank"
+            className="box hover:shadow-xl transition-all block"
+          >
             <div className="box-spine bg-slate-200" />
             <div className="box-top bg-slate-300" />
             <div className="relative box-cover bg-green-300">
               <div className="absolute top-0 left-0 right-0 bottom-0 m-2 border-black border-2 z-30" />
               <div className="text-center py-3 px-2">
                 <h4 className="mb-3 font-bold text-2xl">SvOS</h4>
-                <p className="text-xs font-serif italic font-medium text-center">The Svelte Based Operating System...in Your Browser!</p>
+                <p className="text-xs font-serif italic font-medium text-center">
+                  The Svelte Based Operating System...in Your Browser!
+                </p>
               </div>
               <div className="flex-1 flex items-center justify-center p-4">
-                <Image alt="Screenshot of a browser based operating system" src="/projects/svos-screenshot.png" width={766} height={689} className="flex-1 object-cover grayscale" />
+                <Image
+                  alt="Screenshot of a browser based operating system"
+                  src="/projects/svos-screenshot.png"
+                  width={766}
+                  height={689}
+                  className="flex-1 object-cover "
+                />
               </div>
             </div>
-
           </Link>
 
-          <Link href="https://github.com/devalexwhite/mdjournal" target="_blank" className="box hover:shadow-xl transition-all block">
+          <Link
+            href="https://github.com/devalexwhite/mdjournal"
+            target="_blank"
+            className="box hover:shadow-xl transition-all block"
+          >
             <div className="box-spine bg-slate-200" />
             <div className="box-top bg-slate-300" />
             <div className="relative box-cover bg-slate-700">
               <div className="absolute top-0 left-0 right-0 bottom-0 ml-2 border-white border-l-2 z-30" />
               <div className="text-center  py-3 px-2">
-                <h4 className="mb-3 font-bold text-2xl text-yellow-400">mdJournal</h4>
-                <p className="text-xs font-medium text-center text-white">The Fast Way to Start Your Own Blog!</p>
+                <h4 className="mb-3 font-bold text-2xl text-yellow-400">
+                  mdJournal
+                </h4>
+                <p className="text-xs font-medium text-center text-white">
+                  The Fast Way to Start Your Own Blog!
+                </p>
               </div>
               <div className="flex-1 flex items-center justify-center p-4">
-                <Image alt="Screenshot of a mdJournal app" src="/projects/mdjournal-screenshot.png" width={1228} height={1048} className="flex-1 object-cover grayscale" />
+                <Image
+                  alt="Screenshot of a mdJournal app"
+                  src="/projects/mdjournal-screenshot.png"
+                  width={1228}
+                  height={1048}
+                  className="flex-1 object-cover "
+                />
               </div>
             </div>
           </Link>
 
-          <Link href="https://github.com/devalexwhite/WeightTracker-PalmOS" target="_blank" className="box hover:shadow-xl transition-all block">
+          <Link
+            href="https://github.com/devalexwhite/WeightTracker-PalmOS"
+            target="_blank"
+            className="box hover:shadow-xl transition-all block"
+          >
             <div className="box-spine bg-slate-200" />
             <div className="box-top bg-slate-300" />
             <div className="relative flex flex-col h-full overflow-hidden box-cover bg-slate-400">
               <div className="absolute top-0 left-0 right-0 bottom-0 ml-2 border-white border-l-2 z-30" />
               <div className="text-center  py-3 px-2">
                 <h4 className="mb-3 font-bold text-2xl">Weight Tracker</h4>
-                <p className="text-xs font-medium text-center text-white">Manage Your Health on Palm OS!</p>
+                <p className="text-xs font-medium text-center text-white">
+                  Manage Your Health on Palm OS!
+                </p>
               </div>
               <div className="flex-1 flex items-center justify-center p-4">
-                <Image alt="Screenshot of weight tracker app on a Palm Pilot" src="/projects/weight-tracker-screenshot.png" width={476} height={677} className="max-h-full object-contain grayscale" />
+                <Image
+                  alt="Screenshot of weight tracker app on a Palm Pilot"
+                  src="/projects/weight-tracker-screenshot.png"
+                  width={476}
+                  height={677}
+                  className="max-h-full object-contain "
+                />
               </div>
             </div>
           </Link>
 
-          <Link href="https://github.com/devalexwhite/GemPlace" target="_blank" className="box hover:shadow-xl transition-all block">
+          <Link
+            href="https://github.com/devalexwhite/GemPlace"
+            target="_blank"
+            className="box hover:shadow-xl transition-all block"
+          >
             <div className="box-spine bg-slate-200" />
             <div className="box-top bg-slate-300" />
-            <div className="relative flex flex-col h-full overflow-hidden box-cover bg-cover bg-center" style={{ backgroundImage: "url('/projects/gemplace-screenshot.png')" }}>
+            <div
+              className="relative flex flex-col h-full overflow-hidden box-cover bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/projects/gemplace-screenshot.png')",
+              }}
+            >
               <div className="absolute top-0 left-0 right-0 bottom-0 m-2 border-black border-2 z-30" />
               <div className="flex h-full w-full items-center justify-center flex-col  py-3 px-2">
                 <h4 className="mb-3 font-bold text-2xl">GemPlace</h4>
-                <p className="text-xs font-medium text-center text-slate-800">The <span className="text-red-700 font-bold">hottest</span> game on the Gemini TCP Protocol</p>
+                <p className="text-xs font-medium text-center text-slate-800">
+                  The <span className="text-red-700 font-bold">hottest</span>{" "}
+                  game on the Gemini TCP Protocol
+                </p>
               </div>
             </div>
           </Link>
@@ -216,7 +274,12 @@ export default function HomePage() {
           <div className=" flex-col-reverse md:flex-row flex w-full md:gap-8">
             <div className="flex-1">
               <div className="hidden md:flex flex-row md:justify-end gap-32">
-                <svg width={100} height={100} stroke="#4b4642" className="mr-16 mb-8">
+                <svg
+                  width={100}
+                  height={100}
+                  stroke="#4b4642"
+                  className="mr-16 mb-8"
+                >
                   <line x1={10} x2={10} y1={0} y2={100} strokeWidth={4} />
                   <line x1={20} x2={20} y1={0} y2={100} strokeWidth={4} />
                   <line x1={30} x2={30} y1={0} y2={100} strokeWidth={4} />
@@ -227,7 +290,9 @@ export default function HomePage() {
               </div>
               <div className="mt-8 md:mt-0">
                 <div className="mb-8 w-full py-2 px-6 border-4 border-[#4b4642] text-[#4b4642] uppercase tracking-tighter leading-tight">
-                  <div className="text-xl md:text-3xl font-black">Personal Portfolio Website</div>
+                  <div className="text-xl md:text-3xl font-black">
+                    Personal Portfolio Website
+                  </div>
                   <div className="flex text-xs md:text-base font-medium justify-between w-full">
                     <div className="flex-1">First class</div>
                     <div className="flex-1 text-center">Permit No. N/A</div>
@@ -236,9 +301,15 @@ export default function HomePage() {
                 </div>
 
                 <div className="mb-8 md:mb-0">
-                  <div className="text-4xl md:text-6xl font-black text-[#4b4642] uppercase tracking-tighter">Alex White!</div>
-                  <div className="text-sm md:text-base font-medium text-[#4b4642] uppercase tracking-tighter">Hilliard, OH</div>
-                  <div className="text-sm md:text-base font-medium text-[#4b4642] uppercase tracking-tighter">United States of America</div>
+                  <div className="text-4xl md:text-6xl font-black text-[#4b4642] uppercase tracking-tighter">
+                    Alex White!
+                  </div>
+                  <div className="text-sm md:text-base font-medium text-[#4b4642] uppercase tracking-tighter">
+                    Hilliard, OH
+                  </div>
+                  <div className="text-sm md:text-base font-medium text-[#4b4642] uppercase tracking-tighter">
+                    United States of America
+                  </div>
                 </div>
               </div>
             </div>
@@ -246,7 +317,12 @@ export default function HomePage() {
               <div className="flex items-center justify-center p-2 w-36 h-36 text-center  border-4 border-[#4b4642] text-[#4b4642] uppercase tracking-tighter leading-tight text-lg">
                 No postage necessary if mailed in the united states
               </div>
-              <svg width={150} height={180} stroke="#4b4642" className="hidden md:block">
+              <svg
+                width={150}
+                height={180}
+                stroke="#4b4642"
+                className="hidden md:block"
+              >
                 <line x1={0} x2={150} y1={10} y2={10} strokeWidth={12} />
                 <line x1={0} x2={150} y1={30} y2={30} strokeWidth={12} />
                 <line x1={0} x2={150} y1={50} y2={50} strokeWidth={12} />

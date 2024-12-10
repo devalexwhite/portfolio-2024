@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1600px" height="718px" viewBox="0 0 1600 718" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Group</title>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Large" transform="translate(0, -362)" stroke="#FF0000" stroke-width="2">
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Large" transform="translate(0, -362)" stroke="#FF0000" strokeWidth="2">
             <g id="Group" transform="translate(-17, 363)">
                 <polygon id="Rectangle" points="551.969704 -5.68434189e-14 657.968315 -5.68434189e-14 547.574374 239 367.979803 239"></polygon>
                 <polygon id="Rectangle-Copy" points="657.968315 -5.68434189e-14 763.966925 -5.68434189e-14 727.168945 239 547.574374 239"></polygon>

@@ -29,15 +29,15 @@ export default function AnimatedGrid() {
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="Large"
           transform="translate(0, -362)"
           stroke="#FF0000"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <g id="Group" transform="translate(-17, 363)" ref={scope}>
             <polygon
